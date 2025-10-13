@@ -1,0 +1,8 @@
+now();
+now()
+echo Carbon\Carbon::now();
+exit
+echo Carbon\Carbon::now();
+exit
+echo Carbon\Carbon::now();
+exit
