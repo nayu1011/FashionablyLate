@@ -1,0 +1,48 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: fashionably-late-app
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+    networks:
+      - fashionably-late
+
+  nginx:
+    image: nginx:alpine
+    container_name: fashionably-late-nginx
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d
+    networks:
+      - fashionably-late
+
+  db:
+    image: mysql:8.0
+    container_name: fashionably-late-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: fashionably_late
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: password
+      MYSQL_USER: laravel
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      - fashionably-late
+    ports:
+      - "3306:3306"
+
+networks:
+  fashionably-late:
+    driver: bridge
+
+volumes:
+  dbdata:
+    driver: local
