@@ -1,0 +1,167 @@
+.contact-container {
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.contact-title {
+    font-family: "游明朝",serif;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #898276;
+}
+
+/* 一覧表示 */
+.contact-form {
+  max-width: 800px;
+  margin: 0 auto;
+  color: #8b7969;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.form-label {
+  width: 25%;
+  font-weight: normal;
+  font-size: 18px;
+  color: #8b7969;
+}
+
+.form-field {
+  width: 75%;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  padding: 10px;
+  border: 0px solid #d6ccc2;
+  background-color: #f8f8f8;
+  font-size: 14px;
+  color: #5a4633;
+  box-sizing: border-box;
+}
+
+.form-field select {
+  color: #8b7969;
+  width: 250px;
+  opacity: 0.4;
+}
+
+.form-field textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.form-field radio {
+  margin-right: 8px;
+  display: inline-block;
+}
+/* プレースホルダーを薄く */
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: #8b7969;
+  opacity: 0.5;
+}
+
+/* 名前（姓・名）を横並び */
+.name-field {
+  display: flex;
+  justify-content: space-between;
+  /* gap: 5px;            姓と名の間隔 */
+}
+
+.name-field input {
+  flex: 1;              /* 均等に広がる */
+  width:280px;
+}
+
+/* 性別 */
+.gender-field {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.gender-field label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #5a4633;
+  white-space: nowrap;
+}
+
+.tel-field {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+
+.tel-field input {
+  flex: 1;
+  width: 80px;
+}
+
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.select-wrapper::after {
+  content: "▼";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #e0e0de;
+  font-size: 18px;
+}
+
+.select-wrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 20px;
+}
+
+/* 必須マーク */
+.required::after {
+  content: " ※";
+  color: #c66;
+  margin-left: 4px;
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+
+/* 確認ボタン */
+.confirm-row {
+  display: flex;
+  justify-content: center;
+}
+
+.confirm-btn {
+  background-color: #8b7969;
+  color: #fff;
+  border: none;
+  padding: 10px 40px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.confirm-btn:hover {
+  background-color: #7a6958;
+}

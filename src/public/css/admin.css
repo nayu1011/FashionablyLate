@@ -1,0 +1,299 @@
+.admin-container {
+    margin: 0 auto;
+    padding-top: 20px;
+    width: 1000px;
+}
+
+.admin-title {
+    font-family: "游明朝",serif;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #898276;
+}
+
+/* 検索フォーム */
+.search-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  min-width:1000px;
+  margin-bottom: 10px;
+}
+
+.search-input,
+.search-select,
+.search-date {
+  height: 40px;
+  border: 1px solid #ddd;
+  padding: 0 10px;
+  font-size: 14px;
+  color: #5a4633;
+  background-color: #f8f8f8;
+}
+
+.search-input {
+  width: 300px;
+}
+
+.search-date {
+  padding-right: 30px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+}
+
+.search-date::-webkit-calendar-picker-indicator {
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.search-date::after {
+  content: "▼";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #e0e0de;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+.search-btn {
+  background-color: #8a7762;
+  color: #fff;
+  height: 40px;
+  width: 80px;
+  border: none;
+  padding: 8px 20px;
+  cursor: pointer;
+}
+
+.reset-btn {
+  background-color: #d9c6b3;
+  color: #fff;
+  font-size: 14px;
+  padding: 9px 20px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.search-btn:hover,
+.reset-btn:hover,
+.export-btn:hover {
+  opacity: 0.8;
+}
+
+/* エクスポートとページネーション */
+.admin-toolbar {
+  min-width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 12px 0 10px;
+}
+
+.export-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #ede9e6;
+    color: #7c7670;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.pager { display: inline-block; }
+
+.pager-list {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px;                       /* 外枠の余白 */
+  border: 1px solid #d6ccc2;
+  /* border-radius: 9999px;              角丸カプセル */
+  background: #fff;
+  overflow: hidden;                    /* 角丸内に収める */
+  gap: 0;
+}
+
+.pager-list li { list-style: none; }
+
+.pager-list a,
+.pager-list span {
+  display: inline-block;
+  min-width: 32px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  text-decoration: none;
+  color: #8b7969;
+  font-size: 14px;
+  padding: 0 10px;
+  border-left: 1px solid #e8e2da;     /* 仕切り線 */
+}
+
+/* 先頭は左の線なし */
+.pager-list li:first-child a,
+.pager-list li:first-child span { border-left: none; }
+
+.pager-list a:hover { background-color: #f5efea; }
+
+/* 現在ページを反転 */
+.pager-list .active span {
+  background-color: #8b7969;
+  color: #fff;
+  border-left-color: #8b7969;
+}
+
+/* 無効（‹ ›） */
+.pager-list .disabled span {
+  color: #cbbfb4;
+  cursor: default;
+}
+
+/* 一覧表示テーブル */
+.table-wrapper {
+    width:100%;
+}
+
+.admin-table {
+    width:100%;
+    min-width: 1000px;
+    border-collapse:collapse;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 12px 40px;
+  text-align: left;
+  border-bottom: 1px solid #e8e2da;
+  /* white-space: nowrap; */
+}
+
+.admin-table th {
+  background-color: #8b7969; 
+  color: #fff;
+  font-weight: normal;
+}
+
+.detail-btn {
+  background-color: #fdfdfd;
+  color: #d6ccc2;
+  border: 1px solid #d6ccc2;
+  border-radius: 3px;
+  padding: 4px 10px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s;
+  white-space: nowrap;
+}
+
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.select-wrapper::after {
+  content: "▼";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #e0e0de;
+  font-size: 12px;
+}
+
+.select-wrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 20px;
+}
+
+/* モーダル */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  /* background-color: rgba(0, 0, 0, 0.4); */
+}
+
+.modal-content {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin: 5% auto;
+  padding: 40px 60px 30px;
+  width: 600px;
+  box-shadow: 2px 2px 8px rgba(90, 90, 90, 0.3);
+  position: relative;
+  border-radius: 4px;
+}
+
+.close-btn {
+  float: right;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  line-height: 30px;
+  text-align: center;
+  border: 1px solid #8b7969;
+  border-radius: 50%;
+  color: #8b7969;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #fff;     /* 背景（必要に応じて） */
+  transition: all 0.2s ease;
+}
+
+.modalBody table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.modalBody th,
+.modalBody td {
+  padding: 10px 20px;
+  vertical-align: top;
+  text-align: left;
+  font-size: 14px;
+  color: #5a4633;
+}
+
+.modalBody th {
+  width: 160px; /* ラベル側の固定幅 */
+  color: #8b7969;
+  font-weight: bold;
+}
+
+.modalBody td {
+  width: calc(100% - 160px);
+  word-break: break-word;
+}
+
+.modal-footer {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.delete-btn {
+  background-color: #c0392b;
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  cursor: pointer;
+}
