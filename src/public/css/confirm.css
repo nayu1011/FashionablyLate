@@ -1,0 +1,79 @@
+.confirm-container {
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.confirm-title {
+    font-family: "游明朝",serif;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #898276;
+}
+
+/* 一覧表示 */
+.confirm-table {
+  max-width: 800px;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.confirm-table th,
+.confirm-table td {
+  border: 1px solid #e5ded7;
+  padding: 14px 20px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 14px;
+}
+
+.confirm-table th {
+  width: 25%;
+  background-color: #bba99a;
+  color: #fff;
+  font-weight: normal;
+}
+
+.confirm-table td {
+  background-color: #fff;
+  color: #96918e;
+}
+
+.button-area {
+  display: flex;
+  justify-content: center;   /* 横方向中央寄せ */
+  align-items: center;
+  margin-top: 30px;
+  gap: 30px;                 /* ← ボタンの間隔を広げる（見た目通り） */
+}
+
+.submit-btn,
+.back-btn {
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: 0.2s;
+}
+
+/* 送信ボタン（メイン） */
+.submit-btn {
+  background-color: #8b7969;
+  color: #fff;
+  padding: 8px 30px;
+}
+
+.submit-btn:hover {
+  background-color: #7a6958;
+}
+
+/* 修正ボタン（サブ：文字のみ） */
+.back-btn {
+  background: none;
+  color: #8b7969;
+  border-bottom: 1px solid;
+}
+
+.back-btn:hover {
+  border-bottom: 1px solid #8b7969; /* 下線が出る */
+}

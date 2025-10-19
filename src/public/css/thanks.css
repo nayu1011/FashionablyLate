@@ -1,0 +1,52 @@
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+/* 背景の Thank you */
+body::before {
+  content: "Thank you";
+  position: absolute;
+  font-family: "游明朝", serif;
+  font-size: 20vw;           /* ← 画面幅に応じて超特大に */
+  color: #d6ccc2;            /* ← 薄いベージュグレー */
+  opacity: 0.2;              /* ← 透けさせる */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  pointer-events: none;      /* 背景なのでクリックを無効化 */
+}
+
+.thanks-container {
+  position: relative;
+  text-align: center;
+  color: #8b7969;
+  z-index: 1;                /* ← 背景より上に表示 */
+}
+
+.thanks-message {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.thanks-link {
+  display: inline-block;
+  background-color: #8b7969;
+  color: #fff;
+  padding: 8px 30px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.thanks-link:hover {
+  background-color: #7a6958;
+}
