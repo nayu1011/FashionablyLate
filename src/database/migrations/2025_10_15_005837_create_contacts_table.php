@@ -25,6 +25,9 @@ class CreateContactsTable extends Migration
             $table->string('building', 255)->nullable();
             $table->text('detail');
             $table->timestamps();
+
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_unicode_ci';
         });
     }
 

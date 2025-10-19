@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Contact;
-// use Faker\Factory as FakerFactory;
+use Faker\Factory as FakerFactory;
 
 class ContactFactory extends Factory
 {
@@ -23,19 +23,19 @@ class ContactFactory extends Factory
      */
     public function definition()
     {
-        // $this->faker = FakerFactory::create('ja_JP'); //日本語対応
+        // mb_internal_encoding("UTF-8");
+        $faker = \Faker\Factory::create();
 
         return [
-            //ダミーデータ
-            'category_id' => $this->faker->numberBetween(1,5),
-            'first_name' => $this->faker->firstName(),
-            'last_name' => $this->faker->lastName(),
-            'gender' => $this->faker->numberBetween(1,3),
-            'email' => $this->faker->unique()->safeEmail(),
-            'tel' => $this->faker->phoneNumber(),
-            'address' => $this->faker->address(),
-            'building' => $this->faker->secondaryAddress(), //建物名
-            'detail' => $this->faker->realText(100), //お問い合わせ内容
+            'category_id' => $faker->numberBetween(1,5),
+            'first_name' => '太郎',
+            'last_name' => '山田',
+            'gender' => $faker->numberBetween(1,3),
+            'email' => $faker->unique()->safeEmail(),
+            'tel' => $faker->randomElement(['080', '090', '070']) . $faker->numerify('########'),
+            'address' => '東京都渋谷区千駄ヶ谷1-2-3',
+            'building' => '千駄ヶ谷マンション101',
+            'detail' => $faker->text(100),
         ];
     }
 }

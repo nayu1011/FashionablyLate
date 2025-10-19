@@ -1,6 +1,13 @@
 # アプリケーション名
 FashionablyLate（お問い合わせフォーム）
 
+## 概要
+FashionablyLateでは、お問い合わせ内容を contacts テーブルで管理しています。
+各お問い合わせは categories テーブルの「お問い合わせ種別」と紐付きます。
+管理者（users）は Fortify により認証、問い合わせ一覧を管理画面から閲覧・削除可能です。
+管理者としてログインするには、http://localhost/register にアクセスして
+お名前・メールアドレス・パスワードを登録してください。
+
 ## 環境構築
 
 Docker ビルド
@@ -26,9 +33,6 @@ nginx 1.21.1
 
 ## ER図
 README.mdと同じディレクトリにあるer.pngを参照してください。
-FashionablyLateでは、お問い合わせ内容を contacts テーブルで管理しています。
-各お問い合わせは categories テーブルの「お問い合わせ種別」と紐付きます。
-管理者（users）は Fortify により認証、問い合わせ一覧を管理画面から閲覧・削除可能です。
 
 ## URL
 開発環境：http://localhost/

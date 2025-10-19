@@ -86,3 +86,22 @@ tail -f storage/logs/laravel.log
 exit
 php artisan vendor:publish --tag=laravel-pagination
 exit
+php artisan migrate:fresh --seed
+php artisan tinker
+php artisan migrate:fresh --seed
+php artisan migrate:fresh --seed
+php artisan migrate:fresh --seed
+php artisan migrate:fresh --seed
+php artisan db:seed --class=ContactsTableSeeder
+tail -n 50 storage/logs/laravel.log
+php artisan db:seed --class=ContactsTableSeeder > seeder.log 2>&1
+cat seeder.log
+cat seeder.log
+php artisan db:seed --class=ContactsTableSeeder
+php artisan migrate:fresh --seed
+php artisan migrate:fresh --seed
+php artisan migrate:fresh --seed
+php artisan migrate:fresh --seed
+php artisan migrate:fresh --seed
+php artisan migrate:fresh --seed
+exit

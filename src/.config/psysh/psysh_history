@@ -7,10 +7,11 @@ exit
 echo Carbon\Carbon::now();
 exit
 >>> \Illuminate\Support\Facades\Log::info('ログテストです');
-
 \Illuminate\Support\Facades\Log::info('ログテストです');
-
 cat storage/logs/laravel.log 
 chmod -R 777 storage
 cd storage/logs
+exit
+\App\Models\Contact::factory()->make()->toArray();
+
 exit
